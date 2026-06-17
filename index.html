@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A note from Dale Angelo Montajes to Fullerine (C60) Alcuino</title>
+    <meta
+      name="description"
+      content="A personal invitation website with a yes button, an evasive no button, and a date picker."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <main class="scene">
+      <section class="card" aria-labelledby="title">
+        <div class="seal" aria-hidden="true">DA</div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Handwritten for Fullerine (C60) Alcuino</p>
+          <h1 id="title">A date request from Dale Angelo Montajes</h1>
+          <p class="copy">
+            Mon amour fullerine, you are the quiet light in a room before the morning wakes,
+            the soft grace in every glance, the kind of beauty that lingers like a gentle song.
+            If poetry could breathe, it would borrow your name.
+          </p>
+        </div>
+
+        <div class="letter-grid">
+          <article class="letter-panel">
+            <blockquote class="shakespeare-quote">
+              <p>
+                "Shall I compare thee to a summer's day? Thou art more lovely and more temperate."
+              </p>
+              <footer>William Shakespeare</footer>
+            </blockquote>
+
+            <ul class="date-ideas" aria-label="Date ideas">
+              <li>Good food and easy conversation</li>
+              <li>A quiet walk or coffee stop</li>
+              <li>Something simple that feels like us</li>
+            </ul>
+          </article>
+
+          <article class="choice-panel">
+            <p class="choice-label">Your answer</p>
+            <div class="buttons" aria-label="Answer choices">
+              <button class="btn btn-yes" id="yesBtn" type="button">Yes</button>
+              <button class="btn btn-no" id="noBtn" type="button">No</button>
+            </div>
+            <p class="hint">The no button is shy and won’t stay still for long.</p>
+          </article>
+        </div>
+
+        <section class="schedule" id="schedule" hidden aria-labelledby="scheduleTitle">
+          <h2 id="scheduleTitle">Choose our date, Fullerine</h2>
+          <p>Pick the day and time that works best for you.</p>
+
+          <form class="schedule-form">
+            <label>
+              Date
+              <input id="dateInput" name="date" type="date" />
+            </label>
+
+            <label>
+              Time
+              <input id="timeInput" name="time" type="time" />
+            </label>
+          </form>
+
+          <p class="schedule-note" id="scheduleNote">We can make it official after you choose.</p>
+        </section>
+
+        <p class="signature">— Dale Angelo Montajes</p>
+      </section>
+    </main>
+
+    <div class="confetti" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </body>
+</html>

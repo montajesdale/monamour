@@ -5,15 +5,31 @@ const schedule = document.getElementById("schedule");
 const dateInput = document.getElementById("dateInput");
 const timeInput = document.getElementById("timeInput");
 const scheduleNote = document.getElementById("scheduleNote");
+const mobileQuery = window.matchMedia("(max-width: 900px)");
 
 let escapeCount = 0;
 
 function moveNoButton() {
+  if (mobileQuery.matches) {
+    noBtn.style.position = "relative";
+    noBtn.style.left = "0";
+    noBtn.style.top = "0";
+    noBtn.style.transform = `translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 6 - 3}deg)`;
+    noBtn.style.transition = "transform 0.16s ease";
+
+    escapeCount += 1;
+
+    if (escapeCount > 2) {
+      noBtn.textContent = "Nope";
+    }
+
+    return;
+  }
+
   const area = buttons.getBoundingClientRect();
   const button = noBtn.getBoundingClientRect();
   const maxX = Math.max(0, area.width - button.width);
   const maxY = Math.max(0, area.height - button.height);
-  const padding = 12;
 
   const x = Math.min(maxX, Math.max(0, Math.random() * maxX));
   const y = Math.min(maxY, Math.max(0, Math.random() * maxY));
@@ -26,13 +42,13 @@ function moveNoButton() {
 
   escapeCount += 1;
 
-  if (escapeCount > 2 && window.innerWidth < 640) {
+  if (escapeCount > 2) {
     noBtn.textContent = "Nope";
   }
 }
 
 function resetNoButton() {
-  if (window.innerWidth < 640) {
+  if (mobileQuery.matches) {
     noBtn.style.position = "relative";
     noBtn.style.left = "auto";
     noBtn.style.top = "auto";
@@ -83,4 +99,5 @@ noBtn.addEventListener("click", (event) => {
 
 window.addEventListener("resize", resetNoButton);
 window.addEventListener("load", resetNoButton);
+mobileQuery.addEventListener("change", resetNoButton);
 resetNoButton();
